@@ -108,3 +108,21 @@ section.technical-skills, footer {
   color: var(--clr-red);
   font-weight: var(--fw-middle);
 }
+
+/* Paginations */
+.page-numbers {
+  background-color: var(--clr-white);
+  padding: 10px 5px;
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+}
+
+a.page-numbers {
+  text-decoration: none;
+  color: var(--clr-gray);
+}
+
+.page-numbers.current {
+  background-color: var(--clr-primary);
+  color: var(--clr-white);
+}

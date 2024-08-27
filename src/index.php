@@ -77,11 +77,9 @@
         <div class="row">
           <?php while(have_posts()) { the_post();  ?>          
             <div class="col-12 col-md-4 my-3">
-              <small>Published Apr 29 2024 in 
-                <span class="category">
-                  <a href="#" class="text-danger fw-bold text-decoration-none">
-                    <?= esc_html( get_the_category()[0]->name ); ?>
-                  </a>
+              <small>By <?php the_author_posts_link(); ?> &middot; <?php echo get_the_date('M j, Y'); ?> in 
+                <span class="category">                  
+                  <?= preg_replace('/<a /', '<a class="text-danger fw-bold text-decoration-none"', get_the_category_list( ', ' )); ?>
                 </span>
               </small>
               <div class="articles__title text-uppercase lh-sm">
@@ -90,6 +88,9 @@
               <?php the_excerpt(); ?>
             </div>
           <?php } ?>
+        </div>
+        <div class="text-center">
+          <?= paginate_links(array('prev_text' => '«', 'next_text' => '»')); ?>
         </div>
       </div>
     </div>
