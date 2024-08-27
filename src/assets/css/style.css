@@ -104,9 +104,8 @@ section.technical-skills, footer {
   color: var(--clr-gray-middle);
 }
 
-.category {
-  color: var(--clr-red);
-  font-weight: var(--fw-middle);
+.text-atmm {
+  color: var(--clr-primary);
 }
 
 /* Paginations */
