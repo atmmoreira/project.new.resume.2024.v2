@@ -13,14 +13,14 @@ get_header(); ?>
   <div class="container py-4">
     <div class="row">
       <?php
+      $paged = get_query_var('paged') ? get_query_var('paged') : 1;
       $certifieds = new WP_Query(array(
-        'post_type' => 'certifieds'
+        'paged' => $paged,
+        'post_type' => 'certifieds',
       ));
 
-      while ($certifieds->have_posts()) {
-        $certifieds->the_post(); ?>
-
-        <div class="col-12 col-md-4 my-3">          
+      while ($certifieds->have_posts()) { $certifieds->the_post(); ?>
+        <div class="col-12 col-md-4 my-3">
           <?php the_content(); ?>
           <div class="d-flex justify-content-between my-3">
             <small><?php the_field('certified_date'); ?></small>
@@ -30,11 +30,11 @@ get_header(); ?>
             <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
           </div>
         </div>
-      <?php }
-      wp_reset_postdata(); ?>
+      <?php } wp_reset_postdata(); ?>
+      <!-- debbug -> <pre> <?php var_dump($certifieds); ?> </pre> -->
     </div>
-    <div class="text-center">
-      <?= paginate_links(array('prev_text' => '«', 'next_text' => '»')); ?>
+    <div id="pagination" class="text-center">
+      <?= paginate_links(array('prev_text' => '«', 'next_text' => '»', 'total' => $certifieds->max_num_pages)); ?>
     </div>
   </div>
 </section>

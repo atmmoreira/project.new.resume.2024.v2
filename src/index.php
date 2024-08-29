@@ -89,7 +89,7 @@
             </div>
           <?php } ?>
         </div>
-        <div class="text-center">
+        <div id="pagination" class="text-center">
           <?= paginate_links(array('prev_text' => '«', 'next_text' => '»')); ?>
         </div>
       </div>

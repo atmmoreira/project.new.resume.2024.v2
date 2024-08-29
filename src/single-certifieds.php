@@ -18,7 +18,6 @@
         </ul>
       </div>
       <div class="col-10">
-        </nav>
         <!-- Post preview-->
         <div class="post-preview">
           <h2 class="articles__title text-uppercase lh-sm"> <?= the_title(); ?> </h2>

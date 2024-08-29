@@ -1,6 +1,6 @@
 <?php
 
-function certifiedsCTP()
+function certifieds_custom_post_type()
 {
   $labels = array(
     'name' => 'Certifieds',
@@ -16,6 +16,9 @@ function certifiedsCTP()
   $args = array(
     'public' => true,
     'show_in_rest' => true,
+    'show_ui' => true,
+    'show_in_menu' => true,
+    'has_archive' => true,
     'labels' => $labels,
     'menu_icon' => 'dashicons-images-alt',
     'supports' => array('title', 'editor', 'author', 'thumbnail', 'excerpt'),
@@ -23,4 +26,4 @@ function certifiedsCTP()
 
   register_post_type('certifieds', $args);
 }
-add_action('init', 'certifiedsCTP');
+add_action('init', 'certifieds_custom_post_type');

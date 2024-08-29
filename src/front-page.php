@@ -110,8 +110,10 @@
 
     <div class="row">
       <?php
-      $homePosts = new WP_Query(array('posts_per_page' => 4));
-      while ($homePosts->have_posts()) {
+        $homePosts = new WP_Query(array(
+          'posts_per_page' => 4
+        ));
+        while ($homePosts->have_posts()) {
         $homePosts->the_post(); ?>
 
         <div class="col-12 col-md-3 my-3">
