@@ -1,6 +1,6 @@
 <footer>
   <div class="container text-center py-3">
-    <small>by Anderson Martins, © 2024 - <a href="#" target="_blank">GitHub Project</a></small>
+    <small><?php the_field('copyright'); ?></small>
   </div>
 </footer>
 
