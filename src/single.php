@@ -1,11 +1,4 @@
-<?php
-global $post;
-
-//  echo '<pre>' , var_dump($user_info) , '</pre>';
-
-get_header(); 
-
-?>
+<?php get_header(); ?>
 
 <section class="post-page my-5">
   <div class="container">

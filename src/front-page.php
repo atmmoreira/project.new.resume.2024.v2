@@ -106,7 +106,7 @@
   <div class="container py-4">
     <h2 class="text-uppercase text-center">Recent Articles</h2>
     <div class="divider"></div>
-    <small class="d-flex justify-content-center mt-3"><a href="<?= site_url('blog'); ?>" class="link">all posts</a></small>
+    <small class="d-flex justify-content-center mt-3"><a href="<?= site_url('/blog'); ?>" class="link">all posts</a></small>
 
     <div class="row">
       <?php

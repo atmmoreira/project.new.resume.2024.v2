@@ -1,5 +1,6 @@
 <?php
 
+// Adding styles on our Theme
 function atmmdev_files()
 {
   // Adding CSS Styles in our Theme
@@ -10,6 +11,7 @@ function atmmdev_files()
 }
 add_action('wp_enqueue_scripts', 'atmmdev_files');
 
+// Adding features on our Theme
 function atmmdev_features(){
   register_nav_menu('headerMenuLocation', 'Header Menu Location');
   

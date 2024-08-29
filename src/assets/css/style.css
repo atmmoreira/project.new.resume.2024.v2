@@ -35,12 +35,12 @@ header {
   border-radius: 30px;
 }
 
-#menu-headermenu a {
+#menu-homepage a {
   color: var(--clr-black);
   text-decoration: none;
 }
 
-#menu-headermenu .current-menu-item a {
+#menu-homepage .current-menu-item a {
   color: var(--clr-primary);
   font-weight: var(--fw-bold);
 }

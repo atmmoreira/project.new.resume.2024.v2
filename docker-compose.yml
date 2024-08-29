@@ -13,6 +13,7 @@ services:
       WORDPRESS_DB_NAME: wpdb
     volumes:
       - ./src:/var/www/html/wp-content/themes/wp-atmm-resume
+      - ./plugins:/var/www/html/wp-content/mu-plugins/
   db:
     image: mysql:8.4
     restart: always
