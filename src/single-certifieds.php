@@ -8,13 +8,17 @@
         <h5 class="text-uppercase">Categories</h5>
         <ul class="nav flex-column">
           <?php
-          $categories = get_categories();
-          foreach ($categories as $category) {
-            echo '<li class="nav-item mb-2">
-                      <i class="bi bi-folder"></i>
-                      <a href="' . esc_url(get_category_link($categories[0]->term_id)) . '" class="text-muted text-decoration-none">' . $category->name . '</a>
-                    </li>';
-          } ?>
+            $categories = get_categories();
+            foreach ($categories as $category) {
+              $category_link = sprintf(
+                '<a class="text-muted text-decoration-none mx-2" href="%1$s" alt="%2$s">%3$s</a>',
+                esc_url(get_category_link($category->term_id)),
+                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+                esc_html($category->name)
+              );
+              echo '<li class="nav-item mb-2"> <i class="bi bi-folder"></i>' . sprintf($category_link) . '</li>';
+            }
+          ?>
         </ul>
       </div>
       <div class="col-10">
@@ -22,7 +26,8 @@
         <div class="post-preview">
           <h2 class="articles__title text-uppercase lh-sm"> <?= the_title(); ?> </h2>
           <small class="fst-italic">
-            By <?php $user_info = get_userdata(1); echo $user_info->display_name; ?> &middot;
+            By <?php $user_info = get_userdata(1);
+                echo $user_info->display_name; ?> &middot;
             <?php echo get_the_date('M j, Y'); ?>.
           </small>
         </div>

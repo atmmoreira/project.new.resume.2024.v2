@@ -7,70 +7,18 @@
         <!-- Post preview-->
         <h5 class="text-uppercase">Categories</h5>
         <ul class="nav flex-column">
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">CSS3</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">Vanilla JS</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">jQuery</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">React</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">PHP</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">WordPress</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">MySQL</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">SASS</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">TailwindCSS</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">Vite</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">Node</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">Laravel</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">TDD</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">OOP</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">GraphQL</a>
-          </li>
-          <li class="nav-item mb-2">
-            <i class="bi bi-folder"></i>
-            <a href="#" class="text-muted text-decoration-none">Jest / Cypress</a>
-          </li>
+          <?php
+            $categories = get_categories();
+            foreach ($categories as $category) {
+              $category_link = sprintf(
+                '<a class="text-muted text-decoration-none mx-2" href="%1$s" alt="%2$s">%3$s</a>',
+                esc_url(get_category_link($category->term_id)),
+                esc_attr(sprintf(__('View all posts in %s', 'textdomain'), $category->name)),
+                esc_html($category->name)
+              );
+              echo '<li class="nav-item mb-2"> <i class="bi bi-folder"></i>' . sprintf($category_link) . '</li>';
+            }
+          ?>
         </ul>
       </div> <!-- List of Categories -->
       <div class="col-10">
