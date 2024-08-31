@@ -100,10 +100,6 @@ section.technical-skills, footer {
   font-size: var(--fs-small);
 }
 
-.articles p, .projects p {
-  color: var(--clr-gray-middle);
-}
-
 .text-atmm {
   color: var(--clr-primary);
 }

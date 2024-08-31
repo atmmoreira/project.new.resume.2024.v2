@@ -70,6 +70,10 @@ h3 {
   font-size: small;
 }
 
+.text-atmm {
+  color: var(--clr-primary);
+}
+
 .divider {
   width: 5%;
   border-bottom: 1px solid var(--clr-gray);
