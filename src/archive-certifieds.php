@@ -31,7 +31,6 @@ get_header(); ?>
           </div>
         </div>
       <?php } wp_reset_postdata(); ?>
-      <!-- debbug -> <pre> <?php var_dump($certifieds); ?> </pre> -->
     </div>
     <div id="pagination" class="text-center">
       <?= paginate_links(array('prev_text' => '«', 'next_text' => '»', 'total' => $certifieds->max_num_pages)); ?>

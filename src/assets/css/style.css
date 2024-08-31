@@ -81,7 +81,7 @@ section.technical-skills, footer {
   background-color: var(--clr-white);
 }
 
-.technical-skills__title, .articles__title a, .projects a, .certifieds__title a {
+.technical-skills__title, .articles__title a, .projects__title, .certifieds__title a {
   color: var(--clr-primary);
   font-size: var(--fs-middle);
   margin-bottom: var(--fs-regular);
@@ -89,6 +89,13 @@ section.technical-skills, footer {
   margin-bottom: 20px;
   display: block;
   text-wrap: wrap;
+}
+
+.link_github_project > a {
+  font-size: var(--fs-small);
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
 
 .technical-skills__items::before  {

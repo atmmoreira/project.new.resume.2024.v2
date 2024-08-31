@@ -94,11 +94,6 @@ section.technical-skills, footer {
   text-wrap: wrap;
 }
 
-.technical-skills__items::before  {
-  content: url('../images/arrow.svg');
-  margin-right: 5%;
-}
-
 .articles small, .projects small {
   font-size: var(--fs-small);
 }
